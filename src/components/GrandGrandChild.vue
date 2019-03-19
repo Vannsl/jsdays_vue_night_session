@@ -21,7 +21,9 @@ export default {
   },
   methods: {
     addToCart() {
-      console.log(`addToCart, Sale: ${this.isSaleItem}`);
+      if (this.isSaleItem) {
+        this.$root.$data.hasSaleItem = true;
+      }
     }
   }
 }
