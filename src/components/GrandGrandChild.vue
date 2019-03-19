@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button @click="addToCart">I am GrandGrandChild</button>
+    <button @click="selectItem">I am GrandGrandChild</button>
     <span
-      v-if="isSaleItem"
+      v-if="showSale"
       class="sale"
     >
       Sale!
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
   name: 'GrandGrandChild',
   props: {
@@ -19,9 +21,18 @@ export default {
       default: false
     }
   },
+  computed: {
+    ...mapGetters(['hasAnniversary']),
+    showSale() {
+      return this.hasAnniversary && this.isSaleItem;
+    }
+  },
   methods: {
-    addToCart() {
-      console.log(`addToCart, Sale: ${this.isSaleItem}`);
+    ...mapActions(['selectSaleItem']),
+    selectItem() {
+      if (this.isSaleItem) {
+        this.selectSaleItem();
+      }
     }
   }
 }

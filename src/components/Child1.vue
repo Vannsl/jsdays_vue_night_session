@@ -17,14 +17,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'Child1',
   computed: {
+    ...mapGetters(['hasAnniversary', 'hasSaleItem']),
     showAnniversary() {
-      return false;
+      return this.hasAnniversary;
     },
     showSale() {
-      return false;
+      return this.hasAnniversary && this.hasSaleItem;
     }
   }
 }
