@@ -1,6 +1,12 @@
 <template>
   <div>
-    I am GrandGrandChild
+    <span>I am GrandGrandChild</span>
+    <span
+      v-if="isSaleItem"
+      class="sale"
+    >
+      Sale!
+    </span>
   </div>
 </template>
 
@@ -15,3 +21,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.sale {
+  color: red;
+}
+</style>
