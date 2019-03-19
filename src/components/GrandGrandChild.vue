@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="addToCart">I am GrandGrandChild</button>
+    <button @click="selectItem">I am GrandGrandChild</button>
     <span
       v-if="isSaleItem"
       class="sale"
@@ -19,8 +19,13 @@ export default {
       default: false
     }
   },
+  computed: {
+    showSale() {
+      return this.$root.$data.hasAnniversary && this.isSaleItem;
+    }
+  },
   methods: {
-    addToCart() {
+    selectItem() {
       if (this.isSaleItem) {
         this.$root.$data.hasSaleItem = true;
       }
