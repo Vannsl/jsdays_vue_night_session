@@ -2,7 +2,7 @@
   <div id="app">
     <Child1 />
     <div class="seperator" />
-    <Child2 />
+    <Child2 @selectSaleItem="hasSaleItem = true" />
   </div>
 </template>
 
@@ -15,6 +15,12 @@ export default {
   components: {
     Child1,
     Child2
+  },
+  data() {
+    return {
+      hasAnniversary: true,
+      hasSaleItem: false
+    }
   }
 }
 </script>

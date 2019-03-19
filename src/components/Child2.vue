@@ -1,6 +1,6 @@
 <template>
   <div>
-    <GrandChild />
+    <GrandChild @selectSaleItem="selectSaleItem" />
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
   name: 'Child2',
   components: {
     GrandChild
+  },
+  methods: {
+    selectSaleItem() {
+      this.$emit("selectSaleItem");
+    }
   }
 }
 </script>

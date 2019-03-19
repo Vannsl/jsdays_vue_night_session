@@ -1,7 +1,7 @@
 <template>
   <div>
     <GrandGrandChild :is-sale-item="false" />
-    <GrandGrandChild :is-sale-item="true" />
+    <GrandGrandChild  @selectSaleItem="selectSaleItem" :is-sale-item="true" />
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'GrandChild',
   components: {
     GrandGrandChild
+  },
+  methods: {
+    selectSaleItem() {
+      this.$emit("selectSaleItem");
+    }
   }
 }
 </script>

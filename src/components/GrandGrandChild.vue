@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     addToCart() {
-      console.log(`addToCart, Sale: ${this.isSaleItem}`);
+      this.$emit("selectSaleItem");
     }
   }
 }
