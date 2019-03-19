@@ -1,6 +1,9 @@
 <template>
   <div>
-    <GrandChild @selectSaleItem="selectSaleItem" />
+    <GrandChild
+      :has-anniversary="hasAnniversary"
+      @selectSaleItem="selectSaleItem"
+    />
   </div>
 </template>
 
@@ -11,6 +14,12 @@ export default {
   name: 'Child2',
   components: {
     GrandChild
+  },
+  props: {
+    hasAnniversary: {
+      type: Boolean,
+      default: false,
+    }
   },
   methods: {
     selectSaleItem() {

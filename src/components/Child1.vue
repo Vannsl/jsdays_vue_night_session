@@ -2,7 +2,7 @@
   <div>
     <span>I am Child1</span>
     <span
-      v-if="showAnniversary"
+      v-if="hasAnniversary"
       class="anniversary"
     >
        Anniversary
@@ -19,12 +19,19 @@
 <script>
 export default {
   name: 'Child1',
-  computed: {
-    showAnniversary() {
-      return false;
+  props: {
+    hasAnniversary: {
+      type: Boolean,
+      default: false,
     },
+    hasSaleItem: {
+      type: Boolean,
+      default: false,
+    }
+  },
+  computed: {
     showSale() {
-      return false;
+      return this.hasAnniversary && this.hasSaleItem;
     }
   }
 }

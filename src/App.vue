@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-    <Child1 />
+    <Child1
+      :has-anniversary="hasAnniversary"
+      :has-sale-item="hasSaleItem"
+    />
     <div class="seperator" />
-    <Child2 @selectSaleItem="hasSaleItem = true" />
+    <Child2
+      :has-anniversary="hasAnniversary"
+      @selectSaleItem="hasSaleItem = true"
+    />
   </div>
 </template>
 

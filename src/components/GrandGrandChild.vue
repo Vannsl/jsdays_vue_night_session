@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button @click="addToCart">I am GrandGrandChild</button>
+    <button @click="selectItem">I am GrandGrandChild</button>
     <span
-      v-if="isSaleItem"
+      v-if="showSale"
       class="sale"
     >
       Sale!
@@ -14,14 +14,25 @@
 export default {
   name: 'GrandGrandChild',
   props: {
+    hasAnniversary: {
+      type: Boolean,
+      default: false,
+    },
     isSaleItem: {
       type: Boolean,
       default: false
     }
   },
+  computed: {
+    showSale() {
+      return this.hasAnniversary && this.isSaleItem;
+    }
+  },
   methods: {
-    addToCart() {
-      this.$emit("selectSaleItem");
+    selectItem() {
+      if (this.isSaleItem) {
+        this.$emit("selectSaleItem");
+      }
     }
   }
 }
