@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="addToCart">I am GrandGrandChild</button>
+    <button @click="selectItem">I am GrandGrandChild</button>
     <span
       v-if="isSaleItem"
       class="sale"
@@ -20,7 +20,7 @@ export default {
     }
   },
   methods: {
-    addToCart() {
+    selectItem() {
       console.log(`addToCart, Sale: ${this.isSaleItem}`);
     }
   }
