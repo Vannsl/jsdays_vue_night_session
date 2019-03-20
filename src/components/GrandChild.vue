@@ -1,7 +1,7 @@
 <template>
   <div>
-    <GrandGrandChild />
-    <GrandGrandChild />
+    <GrandGrandChild :is-sale-item="false" />
+    <GrandGrandChild :is-sale-item="false" />
   </div>
 </template>
 
