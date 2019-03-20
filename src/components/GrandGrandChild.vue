@@ -2,7 +2,7 @@
   <div>
     <button @click="selectItem">I am GrandGrandChild</button>
     <span
-      v-if="isSaleItem"
+      v-if="showSale"
       class="sale"
     >
       Sale!
@@ -21,13 +21,13 @@ export default {
   },
   computed: {
     showSale() {
-      return this.$root.$data.hasAnniversary && this.isSaleItem;
+      //
     }
   },
   methods: {
     selectItem() {
       if (this.isSaleItem) {
-        this.$root.$data.hasSaleItem = true;
+        //
       }
     }
   }

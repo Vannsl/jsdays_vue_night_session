@@ -21,10 +21,10 @@ export default {
   name: 'Child1',
   computed: {
     showAnniversary() {
-      return this.$root.$data.hasAnniversary;
+      //
     },
     showSale() {
-      return this.showAnniversary && this.$root.$data.hasSaleItem;
+      //
     }
   }
 }
