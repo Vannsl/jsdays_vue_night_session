@@ -1,34 +1,16 @@
 <template>
   <div>
     <button @click="selectItem">I am GrandGrandChild</button>
-    <span
-      v-if="isSaleItem"
-      class="sale"
-    >
-      Sale!
-    </span>
   </div>
 </template>
 
 <script>
 export default {
   name: 'GrandGrandChild',
-  props: {
-    isSaleItem: {
-      type: Boolean,
-      default: false
-    }
-  },
   methods: {
     selectItem() {
-      console.log(`addToCart, Sale: ${this.isSaleItem}`);
+      console.log('selectItem');
     }
   }
 }
 </script>
-
-<style scoped>
-.sale {
-  color: red;
-}
-</style>
