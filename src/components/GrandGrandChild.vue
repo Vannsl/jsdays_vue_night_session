@@ -2,7 +2,7 @@
   <div>
     <button @click="selectItem">I am GrandGrandChild</button>
     <span
-      v-if="isSaleItem"
+      v-if="showSale"
       class="sale"
     >
       Sale!
