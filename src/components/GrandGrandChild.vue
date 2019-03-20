@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     selectItem() {
-      console.log('selectItem');
+      console.log(`selectItem: ${this.isSaleItem}`);
     }
   }
 }
